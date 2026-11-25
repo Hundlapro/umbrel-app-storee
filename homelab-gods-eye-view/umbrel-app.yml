@@ -1,0 +1,33 @@
+manifestVersion: 1
+id: homelab-gods-eye-view
+name: God's Eye View
+tagline: Live open-source spatial intelligence on a 3D globe
+icon: https://raw.githubusercontent.com/bilawalsidhu/gods-eye-view/84ca483a8de5e5228e343fd38be0724c9dde2e45/public/logo.svg
+category: Networking
+version: "84ca483"
+port: 8473
+description: >-
+  A spy-satellite simulator in your browser, except the data is real:
+  satellites, flights, ships, weather and public cameras on a photorealistic
+  3D globe.
+
+
+  Runs keyless out of the box (Esri imagery, anonymous OpenSky). Optional
+  provider keys can be added as environment variables in this app's
+  docker-compose.yml.
+developer: Bilawal Sidhu
+website: https://godseyeview.ai
+submitter: Homelab
+submission: https://github.com/bilawalsidhu/gods-eye-view
+repo: https://github.com/bilawalsidhu/gods-eye-view
+support: https://github.com/bilawalsidhu/gods-eye-view/issues
+gallery:
+  - https://raw.githubusercontent.com/bilawalsidhu/gods-eye-view/84ca483a8de5e5228e343fd38be0724c9dde2e45/docs/media/site/hero.webp
+  - https://raw.githubusercontent.com/bilawalsidhu/gods-eye-view/84ca483a8de5e5228e343fd38be0724c9dde2e45/docs/media/site/flights.webp
+  - https://raw.githubusercontent.com/bilawalsidhu/gods-eye-view/84ca483a8de5e5228e343fd38be0724c9dde2e45/docs/media/site/cameras.webp
+releaseNotes: >-
+  Packaged from upstream commit 84ca483a8de5.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""

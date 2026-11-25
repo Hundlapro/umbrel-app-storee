@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      # <app-id>_<service>_1
+      APP_HOST: homelab-gods-eye-view_web_1
+      APP_PORT: 4173
+
+  web:
+    image: ghcr.io/hundlapro/gods-eye-view:84ca483a8de5e5228e343fd38be0724c9dde2e45
+    user: "1000:1000"
+    init: true
+    restart: on-failure
+    stop_grace_period: 30s
+    # No ports: published on purpose. The server brokers any provider keys you
+    # add, so it is reachable only through Umbrel's app_proxy (with login).
+    environment:
+      HOST: 0.0.0.0
+      PORT: 4173
+      # Provider Settings refuses proxied requests anyway; trust no extra peers.
+      GEV_KEY_SETUP_TRUSTED_PEERS: none
+      # IP-address hosts always pass; these cover the mDNS name and a proxy
+      # that rewrites Host to the container name.
+      GEV_ALLOWED_HOSTS: umbrel.local,umbrel,homelab-gods-eye-view_web_1
+      # Works without an OpenSky account (rate-limited).
+      OPENSKY_AUTH_MODE: anon
+      # Optional keys, e.g.:
+      # CESIUM_ION_TOKEN: ""
+      # GOOGLE_MAPS_API_KEY: ""
+    volumes:
+      - ${APP_DATA_DIR}/data/cache:/app/.gev-cache
+      - ${APP_DATA_DIR}/data/logs:/app/.gev-logs
