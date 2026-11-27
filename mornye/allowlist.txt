@@ -1,0 +1,5 @@
+# Extension IDs to keep from the official Mornye registry, one per line.
+# Everything else (the streaming download providers) is left out.
+jellyfin
+spotify-web
+apple-music
