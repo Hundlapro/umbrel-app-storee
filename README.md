@@ -1,4 +1,4 @@
-# Homelab Umbrel community app store
+# Hundlapro Umbrel community app store
 
 Add this repo's URL in umbrelOS under App Store → ⋯ → Community App Stores.
 
