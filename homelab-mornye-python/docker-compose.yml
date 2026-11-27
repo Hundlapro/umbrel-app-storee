@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      # <app-id>_<service>_1
+      APP_HOST: homelab-mornye-python_web_1
+      APP_PORT: 8000
+
+  web:
+    image: ghcr.io/mornyeapp/mornye-python:sha-f7a6a97@sha256:5b6db717e9361c8c9266cbabc4167d3862f248453bb5aaf9ce5390a6b58227b3
+    command: ["--web", "--host", "0.0.0.0", "--port", "8000"]
+    # Root only long enough for the entrypoint to hand the data and music
+    # folders to PUID:PGID, then it drops privileges for good.
+    user: "0:0"
+    restart: on-failure
+    stop_grace_period: 30s
+    # A Turnstile challenge launches a real Chromium; it crashes on 64 MB /dev/shm.
+    shm_size: "1gb"
+    # No ports: published on purpose. --web has no login of its own, so it is
+    # reachable only through Umbrel's app_proxy (with Umbrel login).
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      MORNYE_DATA_DIR: /home/mornye/.mornye
+      MORNYE_DOWNLOAD_DIR: /app/downloads
+      MORNYE_PROGRESS_BARS: "0"
+      # Nothing is bundled: add your own extension registry URL(s) here
+      # (comma-separated) or in the web settings.
+      MORNYE_REGISTRIES: ""
+    volumes:
+      # Database, extensions, sessions, settings and cache.
+      - ${APP_DATA_DIR}/data/mornye:/home/mornye/.mornye
+      # Same music folder the Mornye desktop app reads: Files -> Downloads -> music.
+      - ${UMBREL_ROOT}/data/storage/downloads/music:/app/downloads

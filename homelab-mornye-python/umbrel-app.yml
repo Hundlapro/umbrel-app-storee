@@ -1,0 +1,34 @@
+manifestVersion: 1
+id: homelab-mornye-python
+name: Mornye Python
+tagline: Music metadata, library and downloads in a web interface
+icon: https://raw.githubusercontent.com/mornyeapp/Mornye/main/assets/brand/logo/png/mornye-badge@4x.png
+category: Media
+version: "2.2.4"
+port: 8475
+description: >-
+  The web interface (--web mode) of Mornye Python: resolve track metadata,
+  manage a local library with a built-in player, synced lyrics, playlists,
+  and CSV/M3U import.
+
+
+  Files are saved to Files -> Downloads -> music, the same folder the Mornye
+  desktop app reads.
+
+
+  Mornye ships with no download providers and no extension source. Anything
+  you install from a registry of your choosing is your responsibility; check
+  the terms of the services involved and your local law.
+developer: Mornye
+website: https://python.mornye.com/
+submitter: Homelab
+submission: https://github.com/mornyeapp/Mornye-Python
+repo: https://github.com/mornyeapp/Mornye-Python
+support: https://github.com/mornyeapp/Mornye-Python/issues
+gallery: []
+releaseNotes: >-
+  Mornye Python v2.2.4, official image pinned by digest.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
