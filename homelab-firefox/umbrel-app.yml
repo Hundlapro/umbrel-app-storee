@@ -1,0 +1,32 @@
+manifestVersion: 1
+id: homelab-firefox
+category: networking
+name: Firefox
+version: "161.0"
+tagline: Firefox in your browser, running on your Umbrel
+icon: https://getumbrel.github.io/umbrel-apps-gallery/firefox/icon.svg
+description: >-
+  A full Firefox browser that runs on your Umbrel and streams to a browser
+  tab. Bookmarks, logins and history stay in this app's data folder.
+
+
+  Same image as the Firefox app in the official Umbrel App Store.
+releaseNotes: >-
+  Firefox 161.0 (linuxserver/firefox ls140). Firefox requires HTTPS; umbrelOS
+  opens the app over HTTPS automatically.
+developer: Mozilla Foundation
+website: https://www.mozilla.org/firefox/
+dependencies: []
+repo: https://github.com/linuxserver/docker-firefox
+support: https://support.mozilla.org/products/firefox
+port: 8476
+gallery:
+  - https://getumbrel.github.io/umbrel-apps-gallery/firefox/1.webp
+  - https://getumbrel.github.io/umbrel-apps-gallery/firefox/2.webp
+  - https://getumbrel.github.io/umbrel-apps-gallery/firefox/3.webp
+path: ""
+requiresHttps: true
+defaultUsername: ""
+defaultPassword: ""
+submitter: Hundlapro
+submission: https://github.com/getumbrel/umbrel-apps/tree/master/firefox
